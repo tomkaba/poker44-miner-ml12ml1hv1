@@ -11,6 +11,8 @@ baklogs/
 weights/*
 !weights/ml_gen5_s123467_model.pkl
 !weights/ml_gen5_s123467_scaler.pkl
+!weights/ml_realbench_1h_v1_hgb_deep_model.pkl
+!weights/ml_realbench_1h_v1_hgb_deep_scaler.pkl
 data/
 analysis/
 *.sh~

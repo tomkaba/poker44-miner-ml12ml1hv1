@@ -1,4 +1,4 @@
-"""ML1H-only scoring for Poker44 gen12 release (fixed Gen5 artifact)."""
+"""ML1H-only scoring for Poker44 gen12 v1 release (real-benchmark HGB artifact)."""
 
 from __future__ import annotations
 
@@ -10,9 +10,9 @@ from typing import Dict, List, Optional, Tuple
 import numpy as np
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-ML1H_MODEL_PATH = REPO_ROOT / "weights" / "ml_gen5_s123467_model.pkl"
-ML1H_SCALER_PATH = REPO_ROOT / "weights" / "ml_gen5_s123467_scaler.pkl"
-ML1H_THRESHOLD = 0.3
+ML1H_MODEL_PATH = REPO_ROOT / "weights" / "ml_realbench_1h_v1_hgb_deep_model.pkl"
+ML1H_SCALER_PATH = REPO_ROOT / "weights" / "ml_realbench_1h_v1_hgb_deep_scaler.pkl"
+ML1H_THRESHOLD = 0.60
 
 _ML1H_MODEL = None
 _ML1H_SCALER = None
@@ -32,7 +32,7 @@ def _safe_float(value: object) -> float:
 
 
 def _extract_ml_features_gen4(chunk: List[dict]) -> Optional[np.ndarray]:
-    """Extract 16-dimensional feature vector used by Gen5 single-hand model."""
+    """Extract 16-dimensional feature vector used by the ml1h model."""
     if not chunk:
         return None
 
@@ -118,7 +118,7 @@ def _extract_ml_features_gen4(chunk: List[dict]) -> Optional[np.ndarray]:
 
 
 def _load_ml1h_model() -> bool:
-    """Load fixed Gen5 single-hand model and scaler."""
+    """Load fixed ml1h single-hand model and scaler."""
     global _ML1H_MODEL, _ML1H_SCALER, _ML1H_AVAILABLE, _ML1H_LOAD_ERROR
 
     if _ML1H_AVAILABLE and _ML1H_MODEL is not None and _ML1H_SCALER is not None:
