@@ -16,13 +16,10 @@ pip install -r requirements.txt
 pip install -e .
 ```
 
-Model artifact is tracked with Git LFS. On a fresh host run:
+Model artifact is tracked directly in git (no Git LFS required for this repo).
 
 ```bash
-# git-lfs is a system binary (not a Python package), so pip will not install it.
-sudo apt-get update && sudo apt-get install -y git-lfs
-git lfs install
-git lfs pull --include weights/ml_realbench_1h_v1_hgb_deep_model.pkl
+# regular clone is enough; no extra artifact pull step is required
 ```
 
 ## Run Miner
@@ -40,14 +37,12 @@ or legacy wrapper:
 ## Implementation
 
 - Scorer: score_chunk_ml1h_with_route() in poker44/miner_heuristics.py
-- Artifacts:
-  - weights/ml_realbench_1h_v1_hgb_deep_model.pkl
-  - weights/ml_realbench_1h_v1_hgb_deep_scaler.pkl
+- Artifacts: model + scaler stored under weights/
 - Entry point: neurons/miner.py
 
 Manifest implementation SHA256 is computed from:
 
 - neurons/miner.py
 - poker44/miner_heuristics.py
-- weights/ml_realbench_1h_v1_hgb_deep_model.pkl
-- weights/ml_realbench_1h_v1_hgb_deep_scaler.pkl
+- model artifact file under weights/
+- scaler artifact file under weights/
