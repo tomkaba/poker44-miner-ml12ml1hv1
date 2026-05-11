@@ -8,8 +8,8 @@ with only ml1h scoring logic enabled.
 ## Quick start
 
 ```bash
-git clone https://github.com/tomkaba/poker44-miner-gen12ml1hv1.git
-cd poker44-miner-gen12ml1hv1
+git clone https://github.com/tomkaba/poker44-miner-ml12ml1hv1.git
+cd poker44-miner-ml12ml1hv1
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
