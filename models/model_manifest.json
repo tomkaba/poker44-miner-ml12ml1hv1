@@ -6,7 +6,7 @@
     "framework": "python-sklearn-hist-gradient-boosting",
     "license": "MIT",
     "repo_url": "https://github.com/tomkaba/poker44-miner-ml12ml1hv1",
-    "repo_commit": "03b7743424afd0737f304c77601809c7fb5423eb",
+    "repo_commit": "12f0be33918c73afe8a087fe225eb844929f1e1a",
     "inference_mode": "remote",
     "training_data_statement": "No validator-private data used.",
     "data_attestation": "This miner does not train on validator-private human data.",
