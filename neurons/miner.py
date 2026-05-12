@@ -95,7 +95,7 @@ class Miner(BaseMinerNeuron):
                 timeout=5,
             ).decode().strip()
         except Exception:
-            git_commit = os.getenv("POKER44_MODEL_REPO_COMMIT", "")
+            git_commit = ""
 
         self.model_manifest = build_local_model_manifest(
             repo_root=repo_root,
@@ -176,7 +176,7 @@ class Miner(BaseMinerNeuron):
         bt.logging.debug(f"[miner] Received {len(chunks)} chunk(s); first sizes={_preview(chunk_sizes)}")
 
         synapse.risk_scores = scores
-        synapse.predictions = [s >= 0.5 for s in scores]
+        synapse.predictions = [s >= 0.000001 for s in scores]
         synapse.model_manifest = dict(self.model_manifest)
         bt.logging.info(f"[miner] Response manifest={synapse.model_manifest}")
 

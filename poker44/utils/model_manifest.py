@@ -110,10 +110,7 @@ def build_local_model_manifest(
             "POKER44_MODEL_REPO_URL",
             str(default_values.get("repo_url", "")),
         ).strip(),
-        "repo_commit": os.getenv(
-            "POKER44_MODEL_REPO_COMMIT",
-            str(default_values.get("repo_commit", "")),
-        ).strip(),
+        "repo_commit": str(default_values.get("repo_commit", "")).strip(),
         "artifact_url": os.getenv(
             "POKER44_MODEL_ARTIFACT_URL",
             str(default_values.get("artifact_url", "")),
