@@ -1,0 +1,29 @@
+{
+  "schema_version": "1",
+  "open_source": true,
+  "model_name": "poker44_ml12ml1hv1",
+  "model_version": "12.1",
+  "framework": "python-sklearn-hist-gradient-boosting",
+  "license": "MIT",
+  "repo_url": "https://github.com/tomkaba/poker44-miner-ml12ml1hv1",
+  "repo_commit": "03b7743424afd0737f304c77601809c7fb5423eb",
+  "inference_mode": "remote",
+  "training_data_statement": "No validator-private data used.",
+  "data_attestation": "This miner does not train on validator-private human data.",
+  "private_data_attestation": "This miner does not train on validator-private human data.",
+  "implementation_files": [
+    "weights/ml_realbench_1h_v1_hgb_deep_model.pkl",
+    "weights/ml_realbench_1h_v1_hgb_deep_scaler.pkl",
+    "neurons/miner.py",
+    "poker44/__init__.py",
+    "poker44/base/miner.py",
+    "poker44/base/neuron.py",
+    "poker44/miner_heuristics.py",
+    "poker44/utils/config.py",
+    "poker44/utils/misc.py",
+    "poker44/utils/model_manifest.py",
+    "poker44/validator/synapse.py"
+  ],
+  "implementation_sha256": "2796759f68d58ca28d4efa8a2f03a40d6fd003d7d68a47e634c60fca1c871f4c",
+  "notes": "Gen12 ml1h-only scorer with fixed ml_realbench_1h_v1_hgb_deep artifact."
+}
